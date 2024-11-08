@@ -1,0 +1,51 @@
+public class OverloadDemo {
+    private double width;
+    private double height;
+
+    public OverloadDemo() {
+        this.width = 0;
+        this.height = 0;
+    }
+
+    // Constructor with one parameter (for a square)
+    public OverloadDemo(double side) {
+        this.width = side;
+        this.height = side;
+    }
+
+    // Constructor with two parameters (for a rectangle)
+    public OverloadDemo(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate the area (for a rectangle)
+    public double calculateArea() {
+        return width * height;
+    }
+
+    // Overloaded method to calculate the area (for a square)
+    public double calculateArea(double side) {
+        return side * side;
+    }
+
+    // Overloaded method to calculate the area (for a rectangle with given dimensions)
+    public double calculateArea(double width, double height) {
+        return width * height;
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        OverloadDemo rect1 = new OverloadDemo();
+        OverloadDemo rect2 = new OverloadDemo(5);
+        OverloadDemo rect3 = new OverloadDemo(4, 7);
+
+        System.out.println("Default Rectangle Area: " + rect1.calculateArea());
+        System.out.println("Square Area: " + rect2.calculateArea());
+        System.out.println("Rectangle Area: " + rect3.calculateArea());
+
+        // Using overloaded methods
+        System.out.println("Area of a square with side 6: " + rect1.calculateArea(6));
+        System.out.println("Area of a rectangle with width 3 and height 8: " + rect1.calculateArea(3, 8));
+    }
+}

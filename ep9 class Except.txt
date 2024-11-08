@@ -1,0 +1,37 @@
+public class Except
+{
+    public static void main(String args[])
+    {
+    
+        try
+        {
+            System.out.println("going to divide"); int b=39/0; // ArithmeticException)
+        }
+        catch(ArithmeticException e) 
+        {
+            System.out.println(e);
+        }
+        try
+        {
+            int a[]=new int[5];
+            a[5]=4; // ArrayIndexOutOfBoundsException)
+        }    
+        catch(ArrayIndexOutOfBoundsException e) 
+        {
+            System.out.println(e);
+            System.out.println("other statement");
+        }
+        catch(Exception e) 
+        {
+            System.out.println("handeled");
+        } // this catch will not execute
+        
+        System.out.println("normal flow..");
+        
+        System.out.println("normal flow..");
+        
+        System.out.println("normal flow..");
+        
+        System.out.println("normal flow..");
+    }
+}

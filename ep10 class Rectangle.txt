@@ -1,0 +1,47 @@
+class Rectangle {
+    private double width;
+    private double length;
+    private String colour;
+
+    // Constructor
+    public Rectangle(double width, double length, String colour) {
+        this.width = width;
+        this.length = length;
+        this.colour = colour;
+    }
+
+    // Getter for length
+    public double get_length() {
+        return length;
+    }
+
+    // Getter for width
+    public double get_width() {
+        return width;
+    }
+
+    // Getter for colour
+    public String get_colour() {
+        return colour;
+    }
+
+    // Method to calculate area
+    public double find_area() {
+        return width * length;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create two Rectangle objects
+        Rectangle rect1 = new Rectangle(5.0, 10.0, "Red");
+        Rectangle rect2 = new Rectangle(5.0, 10.0, "Red");
+
+        // Compare area and colour
+        if (rect1.find_area() == rect2.find_area() && rect1.get_colour().equals(rect2.get_colour())) {
+            System.out.println("Matching Rectangles");
+        } else {
+            System.out.println("Non-matching Rectangle");
+        }
+    }
+}
